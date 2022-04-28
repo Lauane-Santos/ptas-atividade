@@ -17,7 +17,7 @@ app.listen(3000, function(){
 });
 
 app.post("/", async function (req, res){
-  var resultado = await usuario.create();
+  var resultado = await usuario.create(req.body);
   res.json(resultado);
 });
 
