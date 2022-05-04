@@ -21,3 +21,22 @@ app.post("/", async function (req, res){
   res.json(resultado);
 });
 
+app.put("/:id", async function (req, res){
+ var resultado = await usuario.update(
+    {
+      nome: req.body.nome,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  );
+
+  res.json(resultado);
+});
+
+app.delete("/:id", async function (req, res){
+ 
+});
+
