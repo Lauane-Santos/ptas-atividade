@@ -45,3 +45,8 @@ var resultado = await usuario.destroy({
  res.json(resultado)
 });
 
+app.get("/:id", async function(req, res){
+var usuarios = await usuario.findByPk(req.params.id);
+  res.json(usuarios);
+});
+
