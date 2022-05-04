@@ -37,6 +37,11 @@ app.put("/:id", async function (req, res){
 });
 
 app.delete("/:id", async function (req, res){
- 
+var resultado = await usuario.destroy({
+    where: {
+      id: req.params.id,
+    },
+  });
+ res.json(resultado)
 });
 
